@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tomaso Duso — Economist & Policy Advisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1b2a4a;
+    --navy-light: #2d4170;
+    --cream: #f7f4ef;
+    --white: #ffffff;
+    --gold: #b8954a;
+    --gold-light: #d4b06a;
+    --text: #2c2c2c;
+    --muted: #6b6b6b;
+    --border: #ddd8ce;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  /* — NAV — */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 1.05rem;
+    color: var(--cream);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(247,244,239,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--cream); }
+
+  /* — HERO — */
+  .hero {
+    background: var(--navy);
+    padding: 80px 3rem 72px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.08;
+    color: var(--cream);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-tagline {
+    font-size: 0.9rem;
+    color: rgba(247,244,239,0.65);
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+    max-width: 500px;
+  }
+  .hero-photo-wrap {
+    width: 200px;
+    flex-shrink: 0;
+  }
+  .hero-photo-wrap img {
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    filter: grayscale(20%) contrast(1.05);
+    border: 1px solid rgba(184,149,74,0.35);
+  }
+  .photo-credit {
+    font-size: 0.62rem;
+    color: rgba(247,244,239,0.3);
+    text-align: right;
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+  .hero-divider {
+    width: 2px;
+    height: 36px;
+    background: var(--gold);
+    margin: 2rem 0 0;
+    opacity: 0.6;
+  }
+
+  /* — WRAPPER — */
+  .page-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  /* — AFFILIATIONS BAR — */
+  .affiliations-bar {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 1.4rem 3rem;
+    max-width: 100%;
+  }
+  .affiliations-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .aff-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .aff-items {
+    display: flex;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .aff-item {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .aff-sep {
+    width: 1px;
+    height: 14px;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  /* — MAIN LAYOUT — */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem;
+    padding: 4rem 0 5rem;
+  }
+
+  /* — SECTION — */
+  section { margin-bottom: 3.5rem; }
+  .section-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .bio p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text);
+    margin-bottom: 1.1rem;
+  }
+  .bio p:last-child { margin-bottom: 0; }
+  .bio a {
+    color: var(--navy-light);
+    text-decoration: underline;
+    text-decoration-color: rgba(45,65,112,0.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s;
+  }
+  .bio a:hover { text-decoration-color: var(--navy); }
+
+  /* — RESEARCH INTERESTS — */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--navy-light);
+    border: 1px solid rgba(45,65,112,0.25);
+    padding: 4px 12px;
+    border-radius: 2px;
+  }
+
+  /* — SIDEBAR — */
+  .sidebar { }
+  .sidebar-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .sidebar-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    color: var(--navy);
+    margin-bottom: 1.1rem;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+  }
+  .contact-item {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 0.55rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+  .contact-item .ci-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    min-width: 40px;
+    padding-top: 1px;
+    font-weight: 500;
+  }
+  .contact-item a {
+    color: var(--navy-light);
+    text-decoration: none;
+  }
+  .contact-item a:hover { text-decoration: underline; }
+
+  .link-list { list-style: none; }
+  .link-list li {
+    border-bottom: 1px solid var(--border);
+    padding: 0.55rem 0;
+  }
+  .link-list li:first-child { padding-top: 0; }
+  .link-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .link-list a {
+    font-size: 0.8rem;
+    color: var(--navy-light);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .link-list a:hover { color: var(--navy); }
+  .link-list a::after {
+    content: '→';
+    font-size: 0.7rem;
+    color: var(--gold);
+    margin-left: 8px;
+    transition: transform 0.15s;
+  }
+  .link-list a:hover::after { transform: translateX(3px); }
+
+  /* — PUBLICATIONS HIGHLIGHTS — */
+  .pub-item {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .pub-item:first-child { padding-top: 0; }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-journal {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  .pub-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+  .pub-authors {
+    font-size: 0.76rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* — FOOTER — */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem 3rem;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: rgba(247,244,239,0.5);
+    letter-spacing: 0.06em;
+  }
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .footer-links a {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247,244,239,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  @media (max-width: 760px) {
+    nav, .affiliations-bar, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2rem; }
+    .hero-photo-wrap { width: 140px; }
+    .hero-photo-wrap img { width: 140px; height: 170px; }
+    .page-wrap { padding: 0 1.5rem; }
+    .main-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .affiliations-inner { gap: 1rem; }
+    .nav-links { gap: 1.4rem; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Tomaso Duso</a>
+  <ul class="nav-links">
+    <li><a href="https://sites.google.com/site/tomasoduso/cv">CV</a></li>
+    <li><a href="https://sites.google.com/site/tomasoduso/research">Research</a></li>
+    <li><a href="https://sites.google.com/site/tomasoduso/policy">Policy</a></li>
+    <li><a href="https://sites.google.com/site/tomasoduso/teaching">Teaching</a></li>
+  </ul>
+</nav>
+
+<div style="background: var(--navy);">
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">Economist &amp; Policy Advisor · Berlin</p>
+      <h1>Tomaso<br>Duso</h1>
+      <p class="hero-tagline">
+        Chairman, German Monopolies Commission<br>
+        Head of Firms &amp; Markets, DIW Berlin<br>
+        Professor of Empirical Industrial Economics, TU Berlin
+      </p>
+      <div class="hero-divider"></div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="https://lh3.googleusercontent.com/sitesv/APaQ0SRHKs50JmKvJPORsuIV-LgAeqInEgm2Hs3EjCVLBQ47VgaqLz-7ErfciVSjlFlG-mGZkSmGTfpLJbk6kx0ch_yvSGrgtqV49fhrHvUO0ds4_xBy-utM9CJ4uTlOxjcvUoIxwbjxCWgAId1-ZMdzTBY1eD3UcTjfEOUFNWi3tID7yPwOenVM1E5-YMNiy9pk0NawVwmBZZZy4KrLrcFP4sVFE_yHSZqHyZBkvzc=w1280" alt="Tomaso Duso">
+      <p class="photo-credit">© Daniel Hammelstein</p>
+    </div>
+  </div>
+</div>
+
+<div class="affiliations-bar">
+  <div class="affiliations-inner">
+    <span class="aff-label">Affiliations</span>
+    <div class="aff-items">
+      <span class="aff-item">Monopolkommission (Chair)</span>
+      <div class="aff-sep"></div>
+      <span class="aff-item">DIW Berlin</span>
+      <div class="aff-sep"></div>
+      <span class="aff-item">TU Berlin</span>
+      <div class="aff-sep"></div>
+      <span class="aff-item">Berlin School of Economics</span>
+      <div class="aff-sep"></div>
+      <span class="aff-item">BCCP (Spokesperson)</span>
+      <div class="aff-sep"></div>
+      <span class="aff-item">EC EAGCP</span>
+      <div class="aff-sep"></div>
+      <span class="aff-item">CEPR Research Fellow</span>
+      <div class="aff-sep"></div>
+      <span class="aff-item">CESifo Research Fellow</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="main-grid">
+
+    <!-- MAIN COLUMN -->
+    <main>
+
+      <section class="bio">
+        <p class="section-label">About</p>
+
+        <p>
+          Since September 2024, I have served as Chairman of the German
+          <a href="https://www.monopolkommission.de/en/" target="_blank">Monopolies Commission</a>,
+          of which I have been a member since July 2022. I am Head of the
+          <a href="http://www.diw.de/en/diw_01.c.100361.en/research_advice/industrial_economics/firms_and_markets/firms_and_markets.html" target="_blank">Firms and Markets</a>
+          Department at <a href="http://www.diw.de/en" target="_blank">DIW Berlin</a> and a professor of
+          empirical industrial economics at <a href="https://www.tu-berlin.de/menue/home/" target="_blank">TU Berlin</a>.
+        </p>
+
+        <p>
+          I am a faculty member of the
+          <a href="https://www.berlin-econ.de/" target="_blank">Berlin School of Economics</a>
+          and spokesperson of the
+          <a href="http://bccp-berlin.de/" target="_blank">Berlin Centre for Consumer Policies (BCCP)</a>.
+          At the European level, I serve as a member of the
+          <a href="https://competition-policy.ec.europa.eu/chief-competition-economist/eagcp_en" target="_blank">Economic Advisory Group on Competition Policy (EAGCP)</a>
+          of the European Commission, and as a Research Fellow for
+          <a href="https://cepr.org/" target="_blank">CEPR</a> and
+          <a href="https://www.cesifo-group.de/" target="_blank">CESifo</a>.
+        </p>
+
+        <p>
+          My research is in applied econometrics across industrial organization, competition policy,
+          regulation, and management. My work has appeared in <em>The Review of Economics and Statistics</em>,
+          <em>Journal of the European Economic Association</em>, <em>The Economic Journal</em>,
+          <em>European Economic Review</em>, and <em>Journal of Management Studies</em>, among others.
+        </p>
+
+        <p>
+          I have advised numerous public bodies on competition policy — including several DGs of the
+          European Commission, the UK Competition and Markets Authority, the Dutch Authority for Consumers
+          and Markets, the OECD, and the European Bank for Reconstruction and Development.
+        </p>
+      </section>
+
+      <section>
+        <p class="section-label">Research Interests</p>
+        <div class="tags">
+          <span class="tag">Empirical Industrial Organization</span>
+          <span class="tag">Competition Policy</span>
+          <span class="tag">Merger Control</span>
+          <span class="tag">Regulation</span>
+          <span class="tag">Collusion</span>
+          <span class="tag">Market Power</span>
+          <span class="tag">Applied Econometrics</span>
+          <span class="tag">Fuel Markets</span>
+          <span class="tag">Digital Markets</span>
+          <span class="tag">Telecoms</span>
+        </div>
+      </section>
+
+      <section>
+        <p class="section-label">Selected Publications</p>
+
+        <div class="pub-item">
+          <p class="pub-journal">Review of Economics and Statistics</p>
+          <p class="pub-title">Are Incumbent Firms Hurt by Entrants? Evidence from the EU Air Travel Industry</p>
+          <p class="pub-authors">Tomaso Duso, Lars-Hendrik Röller, Jo Seldeslachts</p>
+        </div>
+
+        <div class="pub-item">
+          <p class="pub-journal">Journal of the European Economic Association</p>
+          <p class="pub-title">On the Effectiveness of European Merger Policy</p>
+          <p class="pub-authors">Tomaso Duso, Klaus Gugler, Burcin Yurtoglu</p>
+        </div>
+
+        <div class="pub-item">
+          <p class="pub-journal">The Economic Journal</p>
+          <p class="pub-title">Governance and Systemic Risk</p>
+          <p class="pub-authors">Tomaso Duso, Christian Stadler</p>
+        </div>
+
+        <div class="pub-item">
+          <p class="pub-journal">European Economic Review</p>
+          <p class="pub-title">Market Power and Innovation in the Telecommunications Industry</p>
+          <p class="pub-authors">Tomaso Duso, Damien J. Neven, Lars-Hendrik Röller</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-card">
+        <h3>Contact</h3>
+        <div class="contact-item">
+          <span class="ci-label">Post</span>
+          <span>DIW Berlin, Anton-Wilhelm-Amo-Str. 58, 10117 Berlin</span>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">Tel</span>
+          <span>+49 30-89789-520</span>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">Email</span>
+          <a href="mailto:tduso@diw.de">tduso@diw.de</a>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">Bluesky</span>
+          <a href="https://bsky.app/profile/tomasoduso.bsky.social" target="_blank">@tomasoduso</a>
+        </div>
+        <div class="contact-item">
+          <span class="ci-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/tomaso-duso-6b0a96253/" target="_blank">Tomaso Duso</a>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Pages</h3>
+        <ul class="link-list">
+          <li><a href="https://sites.google.com/site/tomasoduso/cv" target="_blank">Curriculum Vitae</a></li>
+          <li><a href="https://sites.google.com/site/tomasoduso/research/current-research" target="_blank">Current Research</a></li>
+          <li><a href="https://sites.google.com/site/tomasoduso/research/publications" target="_blank">Publications</a></li>
+          <li><a href="https://sites.google.com/site/tomasoduso/policy" target="_blank">Policy Work</a></li>
+          <li><a href="https://sites.google.com/site/tomasoduso/teaching" target="_blank">Teaching</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>Teaching</h3>
+        <ul class="link-list">
+          <li><a href="https://sites.google.com/site/tomasoduso/teaching/advanced-econometrics" target="_blank">Advanced Econometrics I</a></li>
+          <li><a href="https://sites.google.com/site/tomasoduso/teaching/econometrics" target="_blank">Econometrics</a></li>
+          <li><a href="https://sites.google.com/site/tomasoduso/teaching/empirical-economics" target="_blank">Empirical Economics</a></li>
+          <li><a href="https://sites.google.com/site/tomasoduso/teaching/eio" target="_blank">Empirical IO</a></li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">Tomaso Duso · DIW Berlin · 2025</span>
+    <div class="footer-links">
+      <a href="https://www.monopolkommission.de/en/" target="_blank">Monopolkommission</a>
+      <a href="http://www.diw.de/en" target="_blank">DIW Berlin</a>
+      <a href="https://www.tu-berlin.de/" target="_blank">TU Berlin</a>
+      <a href="https://cepr.org/" target="_blank">CEPR</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
